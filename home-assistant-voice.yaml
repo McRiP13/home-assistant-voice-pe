@@ -1702,7 +1702,7 @@ micro_wake_word:
   models:
     - model: https://github.com/kahrendt/microWakeWord/releases/download/okay_nabu_20241226.3/okay_nabu.json
       id: okay_nabu
-    - model: friday.json
+    - model: http://192.168.178.65:8123/local/friday.json
       id: friday
     - model: hey_mycroft
       id: hey_mycroft
