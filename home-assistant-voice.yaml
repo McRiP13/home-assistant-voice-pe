@@ -219,10 +219,10 @@ switch:
       - script.execute: control_leds
     on_turn_off:
       - script.execute: control_leds
-  # Wake Word Sound Switch.
+  #  Word Sound Switch.
   - platform: template
-    id: wake_sound
-    name: Wake sound
+    id: _sound
+    name:  sound
     icon: "mdi:bullhorn"
     entity_category: config
     optimistic: true
@@ -234,7 +234,7 @@ switch:
     internal: true
     restore_mode: ALWAYS_OFF
     on_turn_off:
-      # Disable stop wake word
+      # Disable stop  word
       - micro_wake_word.disable_model: stop
       - script.execute: disable_repeat
       # Stop any current announcement (ie: stop the timer ring mid playback)
@@ -1709,6 +1709,8 @@ micro_wake_word:
     - model: https://github.com/kahrendt/microWakeWord/releases/download/stop/stop.json
       id: stop
       internal: true
+    - model: "http://192.168.178.51:8123/local/friday.json"
+      id: friday
   vad:
   on_wake_word_detected:
     # If the wake word is detected when the device is muted (Possible with the software mute switch): Do nothing
